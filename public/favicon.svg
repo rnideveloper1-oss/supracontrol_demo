@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84cc16" />
+      <stop offset="100%" stop-color="#65a30d" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="#0f172a"/>
+  <!-- Blue S Shape -->
+  <path d="M 75 32 L 38 32 C 26 32 20 40 20 48 C 20 56 26 62 38 62 L 62 62 C 74 62 80 68 80 76 C 80 84 74 90 62 90 L 25 90" 
+        fill="none" stroke="#1d4ed8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Top Node -->
+  <circle cx="82" cy="32" r="6" fill="#0f172a" stroke="#1d4ed8" stroke-width="4"/>
+  <!-- Middle Green Trace & Node -->
+  <line x1="42" y1="62" x2="82" y2="62" stroke="#84cc16" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="82" cy="62" r="6" fill="#0f172a" stroke="#84cc16" stroke-width="4"/>
+  <!-- Bottom Green Trace & Node -->
+  <line x1="42" y1="90" x2="82" y2="90" stroke="#84cc16" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="82" cy="90" r="6" fill="#0f172a" stroke="#84cc16" stroke-width="4"/>
+  <!-- Left start Node -->
+  <circle cx="16" cy="90" r="6" fill="#0f172a" stroke="#1d4ed8" stroke-width="4"/>
+</svg>

@@ -1,0 +1,365 @@
+:root {
+  --milaha-navy: #002b49;
+  --milaha-navy-dark: #001f35;
+  --milaha-navy-light: #0b3b60;
+  --milaha-blue-bar: #003366;
+  --milaha-blue-hover: #004080;
+  --sc-blue: #1a56db;
+  --sc-green: #78c043;
+  --sc-green-hover: #67a735;
+  --sc-orange: #ea580c;
+  --milaha-bg-gray: #f4f6f9;
+  --milaha-border: #e2e8f0;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ========================================================
+   MILAHA-STYLE TOP UTILITY BAR (WHITE) & MAIN MENU (NAVY)
+   ======================================================== */
+.milaha-top-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #edf2f7;
+  padding: 0.65rem 0;
+  font-size: 0.88rem;
+}
+
+.milaha-top-link {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0.6rem;
+}
+
+.milaha-top-link:hover {
+  color: var(--sc-blue);
+}
+
+.milaha-lang-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sc-blue);
+  color: var(--sc-blue);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.milaha-lang-btn:hover {
+  background-color: var(--sc-blue);
+  color: #ffffff;
+}
+
+/* Deep Navy Mega Navigation Bar */
+.milaha-nav-bar {
+  background: linear-gradient(90deg, #002b49 0%, #003366 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 43, 73, 0.15);
+}
+
+.milaha-nav-item {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  padding: 0.95rem 1.4rem !important;
+  display: inline-block;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.milaha-nav-item:hover, .milaha-nav-item.active {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #a3e635 !important;
+}
+
+.milaha-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--sc-green);
+  transition: width 0.25s ease;
+}
+
+.milaha-nav-item:hover::after, .milaha-nav-item.active::after {
+  width: 100%;
+}
+
+.milaha-nav-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================================
+   HERO WITH CINEMATIC BACKGROUND VIDEO & MILAHA CHEVRONS
+   ======================================================== */
+.milaha-hero-wrapper {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #002b49;
+}
+
+.milaha-hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.38;
+}
+
+.milaha-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 43, 73, 0.92) 0%, rgba(0, 51, 102, 0.85) 50%, rgba(11, 37, 69, 0.95) 100%);
+  z-index: 2;
+}
+
+.milaha-hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Milaha Signature Directional Chevrons (>>>) */
+.milaha-chevrons {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.milaha-chevron-arrow {
+  width: 0;
+  height: 0;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 18px solid var(--sc-green);
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.milaha-chevron-arrow.secondary {
+  border-left-color: var(--sc-blue);
+  opacity: 0.6;
+}
+
+.milaha-chevron-arrow.tertiary {
+  border-left-color: rgba(255, 255, 255, 0.4);
+  opacity: 0.4;
+}
+
+/* Breadcrumb in Hero */
+.milaha-breadcrumb {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.milaha-breadcrumb a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.milaha-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Video Control Badge */
+.milaha-video-control {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  z-index: 10;
+  background: rgba(0, 43, 73, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.milaha-video-control:hover {
+  background: rgba(0, 43, 73, 0.95);
+  border-color: var(--sc-green);
+  color: #a3e635;
+}
+
+/* ========================================================
+   MIDDLE EAST CORPORATE BUTTONS & CARDS
+   ======================================================== */
+.btn-milaha-primary {
+  background-color: var(--sc-blue);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 0.75rem 1.85rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-milaha-primary:hover {
+  background-color: #0f3bb3;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 86, 219, 0.35);
+}
+
+.btn-milaha-outline {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  font-weight: 700;
+  padding: 0.75rem 1.85rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-milaha-outline:hover {
+  background-color: #ffffff;
+  color: var(--milaha-navy);
+}
+
+.btn-sc-green {
+  background-color: var(--sc-green);
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  padding: 0.55rem 1.75rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-sc-green:hover {
+  background-color: var(--sc-green-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(120, 192, 67, 0.35);
+}
+
+/* Specialization Cards (Exact Milaha / Screenshot Style) */
+.sc-spec-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(0, 43, 73, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sc-spec-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(0, 43, 73, 0.15);
+  border-color: rgba(120, 192, 67, 0.5);
+}
+
+.sc-spec-icon-box {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--sc-green);
+}
+
+.sc-spec-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--milaha-navy);
+  margin-bottom: 0.85rem;
+}
+
+.sc-spec-desc {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* Corporate Section Titles */
+.sc-section-title {
+  color: var(--milaha-navy);
+  font-weight: 800;
+  font-size: 2.35rem;
+  letter-spacing: -0.02em;
+}
+
+.sc-section-subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* 3D Canvas Box */
+.sc-digital-twin-container {
+  background: linear-gradient(145deg, #001f35 0%, #002b49 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 43, 73, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-header-sc {
+  background: linear-gradient(135deg, var(--milaha-navy) 0%, #003366 100%);
+  color: #ffffff;
+  border-bottom: 3px solid var(--sc-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .milaha-nav-bar {
+    display: none;
+  }
+  .milaha-hero-wrapper {
+    min-height: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
